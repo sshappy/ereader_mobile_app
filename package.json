@@ -1,0 +1,50 @@
+{
+  "name": "ereader_mobile_app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "类微信读书移动阅读 App：本地书架、EPUB 阅读与双通道听书（仅处理无 DRM 自有电子书）",
+  "scripts": {
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.23.1",
+    "@react-navigation/native": "^6.1.17",
+    "@react-navigation/native-stack": "^6.9.26",
+    "@xmldom/xmldom": "^0.9.5",
+    "js-sha256": "^0.11.0",
+    "jszip": "^3.10.1",
+    "react": "18.2.0",
+    "react-native": "0.74.5",
+    "react-native-document-picker": "^9.1.1",
+    "react-native-fs": "^2.20.0",
+    "react-native-gesture-handler": "^2.16.2",
+    "react-native-safe-area-context": "^4.10.1",
+    "react-native-screens": "^3.31.1",
+    "react-native-sound": "^0.11.2",
+    "react-native-tts": "^4.1.0",
+    "react-native-webview": "^13.8.6",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@react-native/babel-preset": "0.74.87",
+    "@react-native/metro-config": "0.74.87",
+    "@testing-library/react-native": "^12.5.1",
+    "@types/jest": "^29.5.12",
+    "@types/react": "^18.2.79",
+    "babel-jest": "^29.7.0",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.3.2",
+    "ts-jest": "^29.1.4",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

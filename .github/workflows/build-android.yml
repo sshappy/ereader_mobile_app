@@ -21,8 +21,6 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-      - name: 安装 Android SDK
-        uses: android-actions/setup-android@v3
       - name: 安装 npm 依赖
         run: npm ci
       - name: 赋予 gradlew 执行权限

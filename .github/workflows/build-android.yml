@@ -1,0 +1,39 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 源码
+        uses: actions/checkout@v4
+      - name: 安装 Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: 安装 JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: 安装 Android SDK
+        uses: android-actions/setup-android@v3
+      - name: 安装 npm 依赖
+        run: npm ci
+      - name: 赋予 gradlew 执行权限
+        run: chmod +x ./android/gradlew
+      - name: 构建 Release APK
+        working-directory: ./android
+        run: ./gradlew assembleRelease --no-daemon
+      - name: 上传 APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: ereader-release-apk
+          path: android/app/build/outputs/apk/release/app-release.apk
+          if-no-files-found: error
+          retention-days: 30
